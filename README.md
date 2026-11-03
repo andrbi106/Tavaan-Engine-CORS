@@ -1,19 +1,56 @@
-# CORS
+# Tavaan Engine — CORS
 
-> مدیریت Cross-Origin Resource Sharing با Preflight، Origin Allowlist و Wildcard.
+> **مدیریت CORS** — موتور CORS در فریمورک تَوان
+
+## مشخصات
 
 | فیلد | مقدار |
-|------|------|
-| Engine ID | `tavaan.engine.cors` |
-| DOC-ID | `DOC-046` |
-| Namespace | `Tavaan\Engine\Http\Cors` |
-| اولویت | P0 (فاز M2) |
-| مخزن | https://github.com/andrbi106/Tavaan-Engine-CORS |
-| مستندات | https://github.com/Derogaramin/Tavaan-Doc/blob/main/docs/03-engines/cors.md
+|---|---|
+| شناسه | `tavaan.engine.cors` |
+| نام | `CORS` |
+| عنوان فارسی | مدیریت CORS |
+| نسخه | `0.1.0` |
+| namespace | `Tavaan\Engine\Http\Cors` |
+| نوع | `engine` |
 
-## مستندات
+## کلاس‌های اصلی
 
-[docs/03-engines/cors.md](https://github.com/Derogaramin/Tavaan-Doc/blob/main/docs/03-engines/cors.md)
+- `src/Cors.php`
 
----
-*Generated on 2026-11-03.*
+## Service Providerها
+
+- `Tavaan\Engine\Http\Cors\CorsServiceProvider`
+
+## وابستگی‌ها
+
+**موتورهای مورد‌نیاز:**
+
+- `http`
+- `config`
+
+## پیکربندی
+
+- فایل پیکربندی: `config/cors.php`
+- کلید: `cors`
+
+## نصب
+
+```bash
+git clone https://github.com/andrbi106/Tavaan-Engine-CORS.git
+```
+
+این موتور بخشی از فریمورک تَوان است و معمولاً به‌صورت مستقیم نصب نمی‌شود،
+بلکه توسط [Tavaan-Core](https://github.com/andrbi106/Tavaan-Core) مدیریت می‌شود.
+
+## روابط با سایر مخازن
+
+| مخزن | نقش |
+|---|---|
+| **`andrbi106/Tavaan-Engine-CORS`** (این مخزن) | موتور CORS |
+| `andrbi106/Tavaan-Engine-Core` | ساختار پایه + درگاه ارتباط موتورها |
+| `andrbi106/Tavaan-Core` | اسکلت اپلیکیشن + همهٔ موتورها |
+| `Derogaramin/Tavaan-Framework` | فریمورک مادر (monorepo) |
+
+## مجوز
+
+MIT — هم‌راستا با فریمورک مادر تَوان.
