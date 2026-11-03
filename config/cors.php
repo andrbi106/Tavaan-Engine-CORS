@@ -2,17 +2,29 @@
 
 declare(strict_types=1);
 
-/*
- * پیکربندی CORS — DOC-046 §4
+/*|--------------------------------------------------------------------------
+ | Cors Engine Configuration
+ |--------------------------------------------------------------------------
+ |
+ | پیکربندی موتور cors — همهٔ کلیدهای مستندشده در `docs/03-engines/cors.md` بخش «پیکربندی».
+ |
+ |@see https://github.com/Derogaramin/Tavaan-Doc/blob/main/docs/03-engines/cors.md
  */
 
 return [
-    'paths' => ['api/*'],
-    'allowed_methods' => ['*'],
-    'allowed_origins' => env_list('TVN_CORS_ORIGINS'),   // 🔒 پیش‌فرض خالی (امن)
-    'allowed_origins_patterns' => [],
-    'allowed_headers' => ['*'],
-    'exposed_headers' => ['X-Tavaan-Ref', 'X-RateLimit-Remaining'],
-    'max_age' => 3600,
-    'supports_credentials' => false,                      // 🔒 پیش‌فرض false
+    /*| پیش‌فرض موتور (driver/store یا حالت فعال) */
+    'default' => env('CORS_DEFAULT', 'default'),
+
+    /*| کلید کش (در صورت استفاده) */
+    'prefix' => env('CORS_PREFIX', 'cors:'),
+
+    /*| تنظیمات لاگ */
+    'log' => [
+        'channel' => env('CORS_LOG_CHANNEL', 'cors'),
+    ],
+
+    /*| سایر کلیدها (طبق مستندات) */
+    'options' => [
+        // TODO: کلیدهای اضافی طبق سند §۶ (پیکربندی)
+    ],
 ];

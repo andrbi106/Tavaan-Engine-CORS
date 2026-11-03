@@ -5,10 +5,25 @@
   "title_fa": "اشتراک منابع بین‌مبدأ",
   "version": "0.1.0",
   "namespace": "Tavaan\\Engine\\Http\\Cors\\",
-  "autoload": {"psr-4": {"Tavaan\\Engine\\Http\\Cors\\": "../http/src/Cors/"}},
-  "providers": [],
-  "requires": {"php": ">=8.2", "engines": ["http", "config"]},
-  "config": {"file": "config/cors.php", "key": "cors"},
+  "autoload": {
+    "psr-4": {
+      "Tavaan\\Engine\\Http\\Cors\\": "src/"
+    }
+  },
+  "providers": [
+    "Tavaan\\Engine\\Http\\Cors\\CorsMiddlewareServiceProvider"
+  ],
+  "requires": {
+    "php": ">=8.2",
+    "engines": [
+      "http",
+      "config"
+    ]
+  },
+  "config": {
+    "file": "config/cors.php",
+    "key": "cors"
+  },
   "tables": [],
   "commands": [],
   "docs": "docs/03-engines/cors.md"
