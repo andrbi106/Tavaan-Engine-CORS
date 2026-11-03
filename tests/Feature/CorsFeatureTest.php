@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Tavaan\Engine\Http\Cors\Tests\Feature;
 
-use PHPUnit\Framework\TestCase;
+use Tavaan\Testing\TestCase;
 use Tavaan\Engine\Http\Cors\CorsMiddleware;
 use Tavaan\Engine\Http\Cors\CorsServiceProvider;
 
